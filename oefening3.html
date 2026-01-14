@@ -1,29 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inschrijven</title>
+    <title>Doe je mee?</title>
     <link rel="stylesheet" href="oefening3.css" />
 </head>
 <body>
+
 <main>
-    <h2>Doe je mee?</h2>
-    <p>Ons team zoekt nog ervaren spelers,<br>laat je gegevens hier achter en wij contacteren je zo spoedig mogelijk!</p>
+    <h1>Doe je mee?</h1>
 
-    <form id="form"
-          action="mailto:spelers@own.goal?subject=Nieuwe%20speler"
-          method="post"
-          enctype="text/plain">
-        <label for="naam">Naam <span class="req">*</span></label>
-        <input id="naam" name="naam" type="text" required />
+    <p>
+        Ons team zoekt nog ervaren spelers.<br>
+        Laat je gegevens hier achter en wij contacteren je zo spoedig mogelijk!
+    </p>
 
-        <label for="email">E-mail <span class="req">*</span></label>
-        <input id="email" name="email" type="email" required />
+    <form
+            action="mailto:spelers@own.goal?subject=Nieuwe%20speler"
+            method="post"
+            enctype="text/plain">
 
-        <label for="positie">Positie <span class="req">*</span></label>
+        <label for="naam">Naam <span>*</span></label>
+        <input type="text" id="naam" name="naam" required>
+
+        <label for="email">E-mail <span>*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="positie">Positie <span>*</span></label>
         <select id="positie" name="positie" required>
-            <option value="" selected disabled>Kies een positie</option>
+            <option value="" selected></option>
             <option value="off">Aanvaller</option>
             <option value="mid">Middenvelder</option>
             <option value="def">Verdediger</option>
@@ -34,29 +40,18 @@
         <fieldset>
             <legend>Kwaliteiten</legend>
 
-            <label><input type="checkbox" name="shot" value="on"> Blindelings naast trappen</label>
-            <label><input type="checkbox" name="speed" value="on"> Slak op snelheid</label>
-            <label><input type="checkbox" name="awareness" value="on"> Kip zonder kop</label>
+            <label><input type="checkbox" name="kwaliteit1" value="Blindelings naast trappen"> Blindelings naast trappen</label>
+            <label><input type="checkbox" name="kwaliteit2" value="Slak op snelheid"> Slak op snelheid</label>
+            <label><input type="checkbox" name="kwaliteit3" value="Kip zonder kop"> Kip zonder kop</label>
         </fieldset>
 
         <label for="beschikbaar">Beschikbaar vanaf</label>
-        <input id="beschikbaar" name="beschikbaar" type="date" min="2025-02-01" />
+        <input type="date" id="beschikbaar" name="beschikbaar" min="2025-02-01" step="7">
 
-        <button type="submit" class="btn-primary">Solliciteer nu!</button>
-        <button type="reset" class="btn-danger">Ik pas (naar de tegenstander)</button>
+        <button type="submit">Solliciteer nu!</button>
+        <button type="reset">Ik pas (naar de tegenstander)</button>
     </form>
 </main>
 
-<script>
-    // Zaterdagen afdwingen (min = 2025-02-01). Indien geen zaterdag => browser toont fout bij verzenden.
-    const dateInput = document.getElementById("beschikbaar");
-    dateInput?.addEventListener("change", () => {
-        if (!dateInput.value) return;
-        const d = new Date(dateInput.value + "T00:00:00");
-        const isSaturday = d.getDay() === 6; // 0=zo ... 6=za
-        dateInput.setCustomValidity(isSaturday ? "" : "Kies een zaterdag.");
-        if (!isSaturday) dateInput.reportValidity();
-    });
-</script>
 </body>
 </html>

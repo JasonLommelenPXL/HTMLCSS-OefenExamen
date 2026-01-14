@@ -8,82 +8,96 @@
 body {
     background: #EDF2F4;
     color: #030303;
-    padding: 80px;
+    padding: 60px;
 }
 
+/* grote lichtgrijze “kaart” (zoals foto 2) */
 main {
-    max-width: 720px;
+    width: 900px;
     margin: 0 auto;
+    background: #E9EEF2;
+    padding: 60px;
 }
 
-h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+h1 {
+    font-size: 64px;
+    margin-bottom: 24px;
 }
 
 p {
-    margin-bottom: 2rem;
+    margin-bottom: 28px;
+    line-height: 1.3;
 }
 
+/* formbox */
 form {
-    margin: 2rem 0;
-    padding: 1rem;
-    max-width: 35rem;
+    width: 600px;
     border: 1px solid #5F79A0;
-    border-radius: 0.5rem;
+    border-radius: 6px;
+    padding: 18px;
 }
 
-.req {
+/* labels */
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+label span {
     color: #BD6B73;
 }
 
-label {
-    display: block;
-}
-
-input, select {
-    width: 100%;
-}
-
-input:not([type="checkbox"]),
+/* inputs & select */
+input,
 select {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.4rem;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 6px;
 }
 
+/* fieldset */
 fieldset {
+    margin-top: 16px;
+    padding: 12px;
     border: 1px solid #5F79A0;
-    border-radius: 0.4rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    border-radius: 6px;
 }
 
+legend {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* checkbox-regels zoals in foto 2: checkbox links, tekst ernaast */
 fieldset label {
-    display: block;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
-input[type="checkbox"] {
-    margin: 0.5rem 0 0.5rem 1rem;
+fieldset input[type="checkbox"] {
+    width: auto;
+    margin-right: 12px;
 }
 
+/* buttons */
 button {
     width: 100%;
-    padding: 0.75rem;
-    border-radius: 0.4rem;
-    border: 1px solid #030303;
-    margin-top: 0.5rem;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid #333;
+    margin-top: 14px;
+    color: #EDF2F4;
 }
 
-.btn-primary {
+button[type="submit"] {
     background: #5F79A0;
-    color: #EDF2F4;
 }
 
-.btn-danger {
+button[type="reset"] {
     background: #BD6B73;
-    color: #EDF2F4;
 }
 
 button:hover {
