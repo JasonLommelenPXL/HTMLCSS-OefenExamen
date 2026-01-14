@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inschrijven</title>
+    <link rel="stylesheet" href="oefening3.css" />
+</head>
+<body>
+<main>
+    <h2>Doe je mee?</h2>
+    <p>Ons team zoekt nog ervaren spelers,<br>laat je gegevens hier achter en wij contacteren je zo spoedig mogelijk!</p>
+
+    <form id="form"
+          action="mailto:spelers@own.goal?subject=Nieuwe%20speler"
+          method="post"
+          enctype="text/plain">
+        <label for="naam">Naam <span class="req">*</span></label>
+        <input id="naam" name="naam" type="text" required />
+
+        <label for="email">E-mail <span class="req">*</span></label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="positie">Positie <span class="req">*</span></label>
+        <select id="positie" name="positie" required>
+            <option value="" selected disabled>Kies een positie</option>
+            <option value="off">Aanvaller</option>
+            <option value="mid">Middenvelder</option>
+            <option value="def">Verdediger</option>
+            <option value="kee">Keeper</option>
+            <option value="sup">Supporter</option>
+        </select>
+
+        <fieldset>
+            <legend>Kwaliteiten</legend>
+
+            <label><input type="checkbox" name="shot" value="on"> Blindelings naast trappen</label>
+            <label><input type="checkbox" name="speed" value="on"> Slak op snelheid</label>
+            <label><input type="checkbox" name="awareness" value="on"> Kip zonder kop</label>
+        </fieldset>
+
+        <label for="beschikbaar">Beschikbaar vanaf</label>
+        <input id="beschikbaar" name="beschikbaar" type="date" min="2025-02-01" />
+
+        <button type="submit" class="btn-primary">Solliciteer nu!</button>
+        <button type="reset" class="btn-danger">Ik pas (naar de tegenstander)</button>
+    </form>
+</main>
+
+<script>
+    // Zaterdagen afdwingen (min = 2025-02-01). Indien geen zaterdag => browser toont fout bij verzenden.
+    const dateInput = document.getElementById("beschikbaar");
+    dateInput?.addEventListener("change", () => {
+        if (!dateInput.value) return;
+        const d = new Date(dateInput.value + "T00:00:00");
+        const isSaturday = d.getDay() === 6; // 0=zo ... 6=za
+        dateInput.setCustomValidity(isSaturday ? "" : "Kies een zaterdag.");
+        if (!isSaturday) dateInput.reportValidity();
+    });
+</script>
+</body>
+</html>

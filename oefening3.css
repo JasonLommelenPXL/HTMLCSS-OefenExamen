@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+body {
+    background: #EDF2F4;
+    color: #030303;
+    padding: 80px;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+form {
+    margin: 2rem 0;
+    padding: 1rem;
+    max-width: 35rem;
+    border: 1px solid #5F79A0;
+    border-radius: 0.5rem;
+}
+
+.req {
+    color: #BD6B73;
+}
+
+label {
+    display: block;
+}
+
+input, select {
+    width: 100%;
+}
+
+input:not([type="checkbox"]),
+select {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+}
+
+fieldset {
+    border: 1px solid #5F79A0;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+fieldset label {
+    display: block;
+}
+
+input[type="checkbox"] {
+    margin: 0.5rem 0 0.5rem 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.4rem;
+    border: 1px solid #030303;
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    background: #5F79A0;
+    color: #EDF2F4;
+}
+
+.btn-danger {
+    background: #BD6B73;
+    color: #EDF2F4;
+}
+
+button:hover {
+    font-weight: bold;
+    cursor: pointer;
+}

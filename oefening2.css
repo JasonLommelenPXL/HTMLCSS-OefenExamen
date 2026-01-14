@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+body {
+    background: #EDF2F4;
+    color: #030303;
+    padding: 80px;
+}
+
+main {
+    width: 720px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+thead tr {
+    background: #5F79A0;
+    color: #EDF2F4;
+    font-variant-caps: all-petite-caps;
+}
+
+/* links uitlijnen: 2e kolom tbody + tfoot */
+tbody td:nth-child(2),
+tfoot td {
+    text-align: left;
+}
+
+tfoot tr:first-child {
+    background: #2FBF71;
+    color: #EDF2F4;
+}
+tfoot tr:last-child {
+    background: #BD6B73;
+    color: #EDF2F4;
+}
+
+/* highlights in tbody */
+tbody tr:first-child {
+    background: #2FBF7160;
+}
+
+tbody tr:nth-last-child(-n + 2) {
+    background: #BD6B7360;
+}
+
+/* Meest gewonnen (8) en meest verloren (8) */
+tbody tr:nth-child(2) td:nth-child(4) {
+    background: #2FBF71;
+}
+tbody tr:nth-child(4) td:nth-child(5) {
+    background: #BD6B73;
+}
+
+caption {
+    caption-side: bottom;
+    font-weight: bold;
+    padding: 16px;
+}
